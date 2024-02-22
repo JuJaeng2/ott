@@ -11,9 +11,11 @@ jobs:
 
     steps:
     - name: excuting remote ssh commands
+      env:
+        SSH_KEY: ${{secrets.PRIVATE_KEY}}
       run: 
-        cd ~
-    - name: pwd
-      run : pwd
+        echo $SSH_KEY >> key.pem
+    - name: ls -al
+      run : ls -al
         
         
