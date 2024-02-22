@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: excuting remote ssh commands
-      uses: appleboy/ssh-actions@v1.0.3
+      uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{secrets.EC2_HOST}}
         username: ${{secrets.EC2_USER_NAME}}
