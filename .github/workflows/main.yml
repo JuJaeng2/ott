@@ -15,7 +15,8 @@ jobs:
       #   SSH_PEM_KEY: ${{secrets.PRIVATE_KEY}}
       run: 
         pwd
-        ls -al
+    - name: ls -al
+      run : ls -al
         # echo "$SSH_PEM_KEY" >> $HOME/key.pem
         # chmod 400 $HOME/key.pem
         # ll
