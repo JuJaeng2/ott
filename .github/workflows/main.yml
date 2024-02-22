@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: excuting remote ssh commands
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{secrets.EC2_HOST}}
-        username: ${{secrets.EC2_USER_NAME}}
-        password: ${{secrets.PRIVATE_KEY}}
-        script: whoami
+      env: 
+        SSH_PEM_KEY: ${{secrets.PRIVATE_KEY}}
+      run: |
+        echo "$SSH_PEM_KEY" >> $HOME/key.pem
+        cd home
+        ll
         
