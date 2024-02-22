@@ -17,10 +17,10 @@ jobs:
         echo $SSH_KEY >> key.pem
     - name: ssh connect
       env:
-        SSH_HOST: ${{secrets.HOST}}
-        SSH_USER: ${{secrets.USER_NAME}}
+        SSH_HOST: ${{secrets.EC2_HOST}}
+        SSH_USER: ${{secrets.EC2_USER_NAME}}
       run : 
-        ssh -i key.pem ${{secrets.USER_NAME}}@${{secrets.HOST}}
+        ssh -i "key.pem" $SSH_USER@$SSH_HOST
     - name: after connection ls -al
       run:
         echo ls -al
