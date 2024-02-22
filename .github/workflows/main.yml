@@ -13,7 +13,7 @@ jobs:
     - name: excuting remote ssh commands
       env:
         SSH_KEY: ${{secrets.PRIVATE_KEY}}
-      run: 
+      run: |
         echo $SSH_KEY >> key.pem
         chmod 400 key.pem
     - name: ssh connect
