@@ -17,5 +17,7 @@ jobs:
         echo $SSH_KEY >> key.pem
     - name: ls -al
       run : ls -al
+    - name: vi key.pem
+      run: vi key.pem
         
         
