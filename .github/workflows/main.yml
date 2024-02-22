@@ -15,6 +15,7 @@ jobs:
         SSH_KEY: ${{secrets.PRIVATE_KEY}}
       run: 
         echo $SSH_KEY >> key.pem
+        chmod 400 key.pem
     - name: ssh connect
       env:
         SSH_HOST: ${{secrets.EC2_HOST}}
