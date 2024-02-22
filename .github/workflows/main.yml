@@ -15,9 +15,14 @@ jobs:
         SSH_KEY: ${{secrets.PRIVATE_KEY}}
       run: 
         echo $SSH_KEY >> key.pem
-    - name: ls -al
-      run : ls -al
-    - name: vi key.pem
-      run: vi key.pem
+    - name: ssh connect
+      env:
+        SSH_HOST: ${{secrets.HOST}}
+        SSH_USER: ${{secrets.USER_NAME}}
+      run : 
+        ssh -i "key.pem" $SSH_USER@$SSH_HOST
+    - name: after connection ls -al
+      run:
+        echo ls -al
         
         
