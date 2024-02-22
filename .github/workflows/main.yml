@@ -15,6 +15,6 @@ jobs:
         SSH_PEM_KEY: ${{secrets.PRIVATE_KEY}}
       run: |
         echo "$SSH_PEM_KEY" >> $HOME/key.pem
-        cd home
+        chmod 400 $HOME/key.pem
         ll
         
