@@ -20,9 +20,8 @@ jobs:
         SSH_HOST: ${{secrets.EC2_HOST}}
         SSH_USER: ${{secrets.EC2_USER_NAME}}
       run : 
-        ssh -i "key.pem" $SSH_USER@$SSH_HOST
+        ssh -i key.pem $SSH_USER@$SSH_HOST
     - name: after connection ls -al
-      run:
-        echo ls -al
+      run: ls -al
         
         
