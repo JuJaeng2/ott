@@ -1,0 +1,20 @@
+name: EC2 Test with github actions
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: excuting remote ssh commands
+      uses: appleboy/ssh-actions@v1.0.3
+      with:
+        host: ${{secrets.EC2_HOST}}
+        username: ${{EC2_USER_NAME}}
+        password: ${{PRIVATE_KEY}}
+        script: whoami
+        
