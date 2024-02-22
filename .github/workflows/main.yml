@@ -11,10 +11,12 @@ jobs:
 
     steps:
     - name: excuting remote ssh commands
-      env: 
-        SSH_PEM_KEY: ${{secrets.PRIVATE_KEY}}
-      run: |
-        echo "$SSH_PEM_KEY" >> $HOME/key.pem
-        chmod 400 $HOME/key.pem
-        ll
+      # env: 
+      #   SSH_PEM_KEY: ${{secrets.PRIVATE_KEY}}
+      run: 
+        pwd
+        ls -al
+        # echo "$SSH_PEM_KEY" >> $HOME/key.pem
+        # chmod 400 $HOME/key.pem
+        # ll
         
