@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: excuting remote ssh commands
       run: 
-        cd ~/
+        cd ~
     - name: pwd
       run : pwd
         
