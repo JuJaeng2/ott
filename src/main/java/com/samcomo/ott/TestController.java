@@ -8,7 +8,7 @@ public class TestController {
 
   @GetMapping("/test")
   public String test(){
-    return "Test Success!!";
+    return "CI/CD Test Success!!";
   }
 
 }
