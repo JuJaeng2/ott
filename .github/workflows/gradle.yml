@@ -26,9 +26,22 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build -x test
-    - name: ls -al
-      run: ls -al
-    - name: check build file
+    # - name: ls -al
+    #   run: ls -al
+    # - name: check build file
+    #   run: |
+    #     cd build/libs/
+    #     ls -al
+    - name: Docker build
       run: |
-        cd build/libs/
-        ls -al
+        docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
+        docker build -t app . 
+        docker tag app ${{secrets.DOCKER_USER}}/samcomo:latest
+        docker push ${{secrets.DOCKER_USER}}/samcomo:latest
+        
+
+
+
+
+
+        
