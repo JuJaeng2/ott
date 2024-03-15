@@ -31,6 +31,7 @@ jobs:
       run: |
         cd src/main/resources/
         ls -al
+        vi application_test.yml
     # - name: Build with Gradle Wrapper
     #   run: ./gradlew build -x test
    
